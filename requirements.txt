@@ -10,3 +10,5 @@ pillow==11.3.0
 pyjwt==2.10.1
 pytz==2025.2
 python-dotenv==1.1.1
+mysqlclient==2.2.7
+pymysql==1.1.1

@@ -14,7 +14,9 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from dotenv import load_dotenv
+import pymysql
 
+pymysql.install_as_MySQLdb() 
 load_dotenv()  # Load variables from .env
 
 
@@ -83,12 +85,35 @@ WSGI_APPLICATION = 'userapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+     #   'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
+
+#using mysql database
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'userdb',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',  
+        'PORT': '3307',      
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -129,6 +154,8 @@ SIMPLE_JWT = {
 
 # Custom user model
 AUTH_USER_MODEL = 'account.User'
+
+
 
 #to see the errors in the terminal
 LOGGING = {
