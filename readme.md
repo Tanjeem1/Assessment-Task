@@ -25,10 +25,15 @@ For test api endpoint use postman
 -run mysql ans apache server background inside xampp app (NB: In the userapi/settings.py file use the Mysql port which was running in your current xampp app server. Mine was 3307, your may could be different)
 
 -clone the repository and open it with vs code
+
 -create a virtual env
+
 -cd userapi (run this command)
+
 -pip install r- requiements.txt (run this command)
+
 -python manage.py makemigrations (run this command)
+
 -python manage.py migrate (run this command)
  
 
