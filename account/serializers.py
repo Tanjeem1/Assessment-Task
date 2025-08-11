@@ -23,8 +23,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     
 
 
-
-
 #creating a serializer for user login
 class UserLoginSerializer(serializers.Serializer):
     email = serializers.EmailField(max_length=255)

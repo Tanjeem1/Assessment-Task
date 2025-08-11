@@ -16,7 +16,7 @@ import os
 from dotenv import load_dotenv
 import pymysql
 
-pymysql.install_as_MySQLdb() 
+pymysql.install_as_MySQLdb() # RUN MYSQLDB 
 load_dotenv()  # Load variables from .env
 
 
@@ -27,17 +27,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('Django_key')
+#SECRET_KEY = os.environ.get('Django_key')
+SECRET_KEY = 'django-insecure-!$fsc3j1=s)q^dk!4u)c@^0#a7k(@4%v%i(xhp6gdq&^&7k@u0'
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +54,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,7 +67,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'userapi.urls'
+
 
 TEMPLATES = [
     {
@@ -79,6 +86,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'userapi.wsgi.application'
 
 
@@ -93,7 +101,6 @@ WSGI_APPLICATION = 'userapi.wsgi.application'
 #}
 
 #using mysql database
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -104,16 +111,6 @@ DATABASES = {
         'PORT': '3307',      
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

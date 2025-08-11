@@ -12,3 +12,5 @@ class UserRenderer(renderers.JSONRenderer):
             logger.error(f"Validation error: {data}")  # This logs to terminal
             return json.dumps({'errors': data})
         return json.dumps(data)
+    
+    #this function was created so that the error from the backend can be easily shown on the frontend, 

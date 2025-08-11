@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
+
+
+#created the custom user 
 class UserManager(BaseUserManager):
     def create_user(self, email, name, tc, password=None, password2=None):
         if not email:
@@ -25,6 +28,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
+#now use the USER class to store all the data
 class User(AbstractBaseUser):
     email = models.EmailField(verbose_name='Email', max_length=255, unique=True)
     name = models.CharField(max_length=200)
